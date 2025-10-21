@@ -1,0 +1,247 @@
+/*Diseño general*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background-color: #242424;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/*Diseño dentro del contenedor*/
+.container{
+    background: linear-gradient(to right, #494f4917, #a4a4a4, #d85a4c);
+    border-radius: 30px;
+    box-shadow: 0 5px 55px rgb(255, 255, 255);
+    overflow: hidden;
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.container p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span{
+    font-size: 12px;   
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button{
+    background-color: #c53218;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden{
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container form{
+    background-color: #cdc5c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+/*Diseño del formulario*/
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    background-color:#494f49;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+/*Animación*/
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/*Panel desplegable*/
+.toogle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
+}
+
+.container.active .toogle-container{
+    transform: translateX(-100%);
+}
+
+.toogle{
+    background-color: #d8d4e1;
+    height: 100%;
+    background: linear-gradient(to right, #494f4917, #a4a4a4, #d85a4c);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toogle{
+    transform: translateX(50%);
+}
+
+.toogle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toogle-left{
+    transform: translateX(-200%);
+}
+
+.toogle-left a{
+    color: #a1220c;
+}
+
+.toogle-left a:hover{
+    color: #e43c1f;
+}
+
+.container.active .toogle-left{
+    transform: translateX(0);
+}
+
+.toogle-right{
+    right: 0;
+    transform: translateX(0%);
+}
+
+.toogle-right a{
+    color: #292827;
+}
+
+.toogle-right a:hover{
+    color: #626262;
+}
+
+.container.active .toogle-right{
+    transform: translateX(200%);
+}
+
+/* Imagen */
+.img-style_left{
+    position: relative;
+    max-height: 30%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.img-style_left:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px #ff2802);
+}
+
+.img-style_right{
+    position: relative;
+    max-height: 30%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.img-style_right:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px #fafafa);
+}
+
+/*Breadcrumb*/
+.breadcrumb {
+
+align-items: center;
+color: #ff0000;
+}
+
+.breadcrumb a:hover {
+color: #d02516;
+}
