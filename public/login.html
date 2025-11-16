@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="icon" type="image/png" sizes="40x40" href="assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b30000">
+    <title>Log In / Sign In</title>
+</head>
+<body>
+    <!--Contenedor-->
+    <div class="container" id="container">
+        <!--Registro-->
+        <div class="form-container sign-up">
+            <form id="registerForm">
+                <h1>Registra tu cuenta</h1>
+                <br>
+                <span> Asegurate de recordar tu contraseña </span>
+                <input type="text"
+                id="nombre"
+                placeholder="Nombre y Apellido"
+                pattern="^(?=[A-Za-zÀ-ÖØ-öø-ÿ ]*$)(?=.*([A-Za-zÀ-ÖØ-öø-ÿ]).*\1)[A-Z][a-zà-öø-ÿ]+(?: [A-Z][a-zà-öø-ÿ]+)+$"
+                title="Los nombres inician con mayuscula, no se acepta solo un nombre, caractéres especiales ni números"
+                required/>
+                <input 
+                type="email"
+                id="correoRegistro"
+                placeholder="Email"
+                required/>
+                <input 
+                type="password"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+                title="Mínimo 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial"
+                id="contraseñaRegistro"
+                placeholder="Contraseña"
+                required/>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+        <!--Log In-->
+        <div class="form-container sign-in">
+            <form id="loginForm">
+                <h1>Inicia sesión</h1>
+                <br>
+                <input
+                type="email"
+                id="correoLogin"
+                placeholder="Email"/>
+                <input
+                type="password"
+                id="contraseñaLogin"
+                placeholder="Contraseña"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+                title="Mínimo 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial"/>
+                <br>
+                <!--<a href="#">Olvidaste tu contraseña?</a>-->
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+        <!--Panel desplegable-->
+        <div class="toogle-container">
+            <div class="toogle">
+                <div class="toogle-panel toogle-left">
+                    <img class="img-style_left" src="assets/logo.png" alt="Logo">
+                    <br>
+                    <h1>Hola de nuevo!</h1>
+                    <p>Ingrese sus datos <br> para acceder a su cuenta.</p>
+                    <button class="hidden" id="login">Inicia sesión</button>
+                    <a href="/"> <- Inicio </a>
+                </div>
+                <div class="toogle-panel toogle-right">
+                    <img class="img-style_right" src="assets/logo.png" alt="Logo">
+                    <br>
+                    <h1>Buen dia</h1>
+                    <p>Registre los datos personales que requerimos para acceder a nuestro sitio.</p>
+                    <button class="hidden" id="register">Registrarse</button>
+                    <a href="/"> <- Inicio </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/login.js"></script>
+    <script src="/js/register-sw.js"></script>
+</body>
+</html>

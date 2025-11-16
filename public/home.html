@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" type="image/png" sizes="40x40" href="assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b30000">
+    <title>Alerta | MX</title>
+</head>
+<body>
+    <!--Página principal-->
+    <header>
+    <nav class="navbar">
+        <div class="logo">
+        <img src="/assets/logo.png" class="logo-img" alt="logo" />
+        </div>
+        <div class="nav-links">
+        <a href="#QS">¿Quienes somos?</a>
+        <a href="#MYV">Misión y Vision</a>
+        <a href="#valores">Valores</a>
+        <button class="login-btn" onclick="logIn()">Iniciar Sesión</button>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+    <!-- Proceso de acción -->
+    <section class="hero">
+        <h1>Alza la voz, no te quedes callado/a</h1>
+        <p>La ruta de acción para generar un reporte es la siguiente:</p>
+        <div class="steps-container">
+        <div class="step">
+            <div class="step-icon">🔍</div>
+            <div class="step-title">1- Iniciar sesión</div>
+        </div>
+        <div class="step">
+            <div class="step-icon">📚</div>
+            <div class="step-title">2- Llenar el reporte</div>
+        </div>
+        <div class="step">
+            <div class="step-icon"> ✅ </div>
+            <div class="step-title">3- Subir el reporte en linea</div>
+        </div>
+        <div class="step">
+            <div class="step-icon">👮</div>
+            <div class="step-title">4- Las autoridades correspondientes se harán cargo</div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <h2>Contamos con...</h2>
+        <button class="tab-btn" data-type="doctor">Doctores</button>
+        <button class="tab-btn" data-type="firefight">Bomberos</button>
+        <button class="tab-btn" data-type="police">Policias</button>
+    </div>
+
+    <!-- Stats -->
+    <section class="stats" id="stats">
+        <div class="stat-circle">
+        <span id="percentage">0</span>
+        </div>
+        <p class="stats-text" id="statText">Escoge un dato</p>
+    </section>
+
+    <!-- Quiénes somos -->
+    <section class="quienes-somos" id="QS">
+        <div class="contenido">
+        <div class="texto">
+            <h2>¿Quiénes somos?</h2>
+            <p>En <strong>Alerta MX</strong> trabajamos para garantizar una respuesta rápida ante emergencias
+            y necesidades básicas en las comunidades más vulnerables. Nuestra plataforma digital permite reportar en tiempo real 
+            situaciones relacionadas con <b>agua, salud, vivienda y seguridad </b> en tiempo real.</p>
+        </div>
+        <div class="imagen">
+            <img src="/assets/equipo.png" alt="Nuestro equipo" />
+        </div>
+        </div>
+    </section>
+
+    <!-- Mision y vision -->
+    <section class="faq-section" id="MYV">
+        <h2>Misión y Visión</h2>
+
+        <div class="faq-item">
+        <div class="faq-question">
+            <span>¿Cuál es la misión de la empresa?</span>
+            <span class="faq-icon">➕</span>
+        </div>
+        <div class="faq-answer">
+            Facilitar la comunicación entre la ciudadanía y las autoridades mediante tecnología accesible, transparente y eficiente.
+        </div>
+        </div>
+
+        <div class="faq-item">
+        <div class="faq-question">
+            <span>¿Cuál es su visión?</span>
+            <span class="faq-icon">➕</span>
+        </div>
+        <div class="faq-answer">
+            Ser la plataforma líder en México en la gestión digital de reportes ciudadanos, promoviendo la participación y el bienestar social.
+        </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="contact-section" id="valores">
+        <h2>¿Qué valores nos distinguen como empresa?</h2>
+        <div class="contact-step">
+        <h3>Compromiso social</h3>
+        <p>Es nuestro deber servir a la comunidad como se merece, con rapidez y eficacia.</p>
+        </div>
+        <div class="contact-step">
+        <h3>Transparencia</h3>
+        <p>Ayudar a cualquier persona, sin importar su etnia, género, religión o estatus social.</p>
+        </div>
+        <div class="contact-step">
+        <h3>Innovación</h3>
+        <p>Mantener actualizada la plataforma con cambios que afecten para bien el proyecto.</p>
+        </div>
+        <div class="contact-step">
+        <h3>Seguridad</h3>
+        <p>Nuestros usuarios pueden sentirse tranquilos por la seguridad meticulosa de la plataforma, así mismo, que sus reportes serán escuchados por las autoridades.</p>
+        </div>
+    </section>
+
+    <!-- Contacto final -->
+    <section class="contacto">
+        <div class="contenedor-contacto">
+        <div class="info-contacto">
+            <h2>Contáctanos</h2>
+            <p>📍 UTSC, Ciudad de Santa Catarina, Nuevo León</p>
+            <p>📞 (52) 81 1527 8594 </p>
+            <p>✉️ integradoraproyecto7@gmail.com</p>
+            <p>⏰ Siempre alertas, siempre contigo</p>
+        </div>
+        </div>
+    </section>
+    </main>
+</body>
+<script src="./js/home.js"></script>
+<script src="/js/register-sw.js"></script>
+</html>

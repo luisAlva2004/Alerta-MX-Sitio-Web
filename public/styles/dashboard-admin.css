@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f6f8fb;
+    color: #333;
+}
+
+/* Botón toggle */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #4c4c4c;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.user-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.user-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar.active a{
+    color: #d32f2f;
+}
+
+.sidebar.active a:hover{
+    color: #fb3e3e;
+}
+
+.logout-btn {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #ff4757;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 0;
+    padding: 60px 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.active ~ .main-content {
+    margin-left: 250px;
+}
+
+/* Tabla de usuarios */
+.main-content h2 {
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+#usersTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#usersTable th, #usersTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#usersTable th {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#usersTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+.action-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: white;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+}
+
+.edit-btn:hover {
+    background-color: #43a047;
+}
+
+.delete-btn {
+    background-color: #e53935;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Fondo oscuro semitransparente y centrado */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cuando esté activo, centrado con flex */
+.popup.active {
+    display: flex;
+}
+
+/* Contenedor interno del popup */
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.3s ease;
+    margin: 0 auto 15px auto;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Animación suave */
+@keyframes aparecer {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Botón de cerrar */
+.popup-content button {
+    margin-top: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: #e63b3b;
+}
+
+/* Gráfica */
+canvas {
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+

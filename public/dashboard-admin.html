@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="40x40" href="assets/logo.png">
+    <link rel="stylesheet" href="styles/dashboard-admin.css">
+    <title>Dashboard - Admin</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b30000">
+</head>
+<body>
+    <!-- Botón de menú -->
+    <button id="menuToggle" class="menu-toggle">☰</button>
+    
+    <!-- Sidebar Toggle -->
+    <aside id="sidebar" class="sidebar">
+        <div class="user-section">
+            <br>
+            <br>
+            <h3 id="userName">Cargando...</h3>
+            <p id="userEmail">Cuenta:</p>
+        </div>
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        <br>
+        <a href="/"> <- Inicio </a>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <h2>Panel de Administrador</h2>
+        <p>Usuarios registrados en el sistema</p>
+
+        <table id="usersTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>UID</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán los usuarios dinámicamente -->
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Estadísticas de Reportes del Gobernador</h2>
+        <canvas id="reportesChart" width="600" height="300"></canvas>
+
+    </main>
+    <div id="editPopup" class="popup">
+    <div class="popup-content">
+    <h3>Editar Usuario</h3>
+    
+    <label for="editName">Nombre:</label>
+    <input type="text" id="editName" placeholder="Nombre del usuario" />
+
+    <label for="editEmail">Correo:</label>
+    <input type="email" id="editEmail" placeholder="Correo electrónico" />
+
+    <label for="editPassword">Contraseña (dejar vacío si no se cambia):</label>
+    <input type="password" id="editPassword" placeholder="Nueva contraseña" />
+
+        <label for="editRole">Rol:</label>
+        <select id="editRole">
+        <option value="1">Admin</option>
+        <option value="2">Usuario</option>
+        <option value="3">Gobernador</option>
+        </select>
+
+        <div class="popup-buttons">
+        <button onclick="guardarCambiosUsuario()">Guardar</button>
+        <button onclick="cerrarPopup()">Cancelar</button>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard-admin.js"></script>
+    <script src="/js/register-sw.js"></script>
+</body>
+</html>

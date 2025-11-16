@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="stylesheet" href="styles/dashboard-gobernador.css" />
+    <title>Dashboard - Gobernador</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b30000">
+</head>
+<body>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="user-section">
+        <br /><br />
+        <h3 id="userName">Cargando...</h3>
+        <p id="userEmail">Cuenta:</p>
+        </div>
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        <br />
+        <a href="/"> &larr; Inicio </a>
+    </aside>
+
+    <main class="main-content">
+        <h2>Panel del Gobernador/a</h2>
+        <p>Monitoreo en tiempo real de reportes ciudadanos</p>
+
+    <section id="map-section">
+        <h3>Mapa de reportes</h3>
+        <div id="map"></div>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <div id="filtros">
+        <select id="filtroDepartamento">
+            <option value="">Filtrar por departamento</option>
+            <option value="Policia">Policía</option>
+            <option value="Bomberos">Bomberos</option>
+            <option value="Paramedicos">Paramédicos</option>
+        </select>
+
+        <input type="text" id="filtroColonia" placeholder="Filtrar por dirección" />
+        </div>
+    </section>
+
+    <section id="tabla-section">
+        <h3>Reportes ciudadanos</h3>
+        <table id="tablaReportes">
+        <thead>
+            <tr>
+            <th>Usuario</th>
+            <th>Departamento</th>
+            <th>Dirección</th>
+            <th>Estatus</th>
+            <th>Acción</th>
+            <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Popup de llamada -->
+    <div id="popupLlamada" class="popup">
+        <div class="popup-content">
+        <p id="mensajeLlamada"></p>
+        <button onclick="cerrarPopup()">Cerrar</button>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <!-- Reporte social -->
+    <section id="impacto-section">
+        <h3>Registrar reporte de impacto social</h3>
+        <form id="formImpacto">
+        <textarea
+            id="descripcionImpacto"
+            placeholder="Describe brevemente el impacto o situación..."
+            required
+        ></textarea>
+        <br>
+        <br>
+        <button type="submit">Enviar</button>
+        </form>
+    </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/dashboard-gobernador.js"></script>
+    <script src="/js/register-sw.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+node_modules
+.dockerignore
+.env
+docker-compose.yml
+Dockerfile
+package-lock.json
+package.json
+/config/serviceAccountKey.json

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="stylesheet" href="styles/dashboard-usuario.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b30000">
+    <title>Dashboard - Usuario</title>
+</head>
+<body>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+
+    <aside id="sidebar" class="sidebar">
+        <div class="user-section">
+        <br /><br />
+        <h3 id="userName">Cargando...</h3>
+        <p id="userEmail">Cuenta:</p>
+        </div>
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        <br />
+        <a href="/"> &larr; Inicio </a>
+    </aside>
+
+    <main class="main-content">
+        <h2>Bienvenido/a</h2>
+        <p>Este es tu panel de usuario. Aquí podrás ver tus reportes, estado y notificaciones.</p>
+        <br>
+    <h3>Selecciona la ubicación del incidente en el mapa</h3>
+    <br>
+    <div id="map"></div>
+    <br>
+    <hr>
+    <br>
+    <section class="form-section">
+        <h3>Registrar nuevo reporte</h3>
+        <br>
+        <form id="formReporte" enctype="multipart/form-data">
+            <label>Dirección:</label><br />
+            <input type="text" name="direccion" id="direccion" required /><br/>
+
+            <label>Descripción:</label><br />
+            <textarea name="descripcion" id="descripcion" required></textarea><br/>
+
+            <label>Departamento encargado:</label><br/>
+            <select name="departamento" id="departamento" required>
+                <option value="">Selecciona...</option>
+                <option value="Policia">Policía</option>
+                <option value="Bomberos">Bomberos</option>
+                <option value="Paramedicos">Paramédicos</option>
+            </select><br/>
+
+            <label>Evidencia (foto, video o audio):</label><p>El contenido debe pesar menos de 50 MB</p>
+            <input type="file" name="evidencia" id="evidencia" accept="image/*,video/*,audio/*" /><br/>
+
+            <button type="submit">Enviar reporte</button>
+        </form>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section class="lista-section">
+        <h3>📋 Mis reportes</h3>
+        <div id="listaReportes" class="reportes-container">
+            <p>Aquí se mostrarán tus reportes <p>
+        </div>
+    </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="js/dashboard-usuario.js"></script>
+    <script src="/js/register-sw.js"></script>
+</body>
+</html>
