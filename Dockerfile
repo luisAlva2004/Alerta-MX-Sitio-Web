@@ -16,8 +16,6 @@ COPY . .
 
 # Variables de entorno
 ENV NODE_ENV=production
-ENV FIREBASE_SERVICE_ACCOUNT_PATH=/app/config/serviceAccountKey.json
-
 # Exponer puerto del backend
 EXPOSE 8080
 
