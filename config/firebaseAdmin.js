@@ -1,12 +1,18 @@
-// config/firebaseAdmin.js
 const admin = require("firebase-admin");
-const path = require("path");
 
-const serviceAccountPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH || "./config/serviceAccountKey.json";
+let serviceAccount;
+
+if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+  serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+} else {
+  // fallback para desarrollo local
+  serviceAccount = require("./serviceAccountKey.json");
+}
 
 admin.initializeApp({
-    credential: admin.credential.cert(require(path.resolve(serviceAccountPath))),
+  credential: admin.credential.cert(serviceAccount),
 });
 
 const db = admin.firestore();
+
 module.exports = { admin, db };
