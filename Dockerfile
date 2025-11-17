@@ -16,11 +16,10 @@ COPY . .
 
 # Variables de entorno
 ENV NODE_ENV=production
-ENV PORT=4000
 ENV FIREBASE_SERVICE_ACCOUNT_PATH=/app/config/serviceAccountKey.json
 
 # Exponer puerto del backend
-EXPOSE 4000
+EXPOSE 8080
 
 # Comando de inicio
 CMD ["node", "index.js"]
